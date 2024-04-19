@@ -1,0 +1,225 @@
+********************Identify Courses********************
+
+Problem Statement : Identify Courses
+-------------------------------------
+Search and display all web development courses 
+1. Should be for beginners level.
+2. Courses offered in English language
+3. Display first two courses with name, total learning hours and rating.
+(Suggested Site: coursera.org however  you are free to choose any other legitimate  site)
+
+Detailed Description: Hackath Ideas
+-------------------------------------
+1. Search for web development courses for Beginners level & English Language and extract the course names, total learning hours & rating for first 2 courses
+2. Look for Language Learning; Extract all the languages and different levels with its total count & display them
+3. In Home page, go to "For Enterprise"; Look into Courses for Campus under Product; Fill the  "Ready to transform" form with any one input invalid (example: email); Capture the error message & display
+(Suggested Site: coursera.org however  you are free to choose any other legitimate  site)
+
+Key Automation Scope
+-------------------------------------
+Handling different browser windows, search option
+Extract multiple drop down list items & store in collections
+Navigating back to home page
+Filling form (in different objects in web page)
+Capture warning message
+Scrolling down in web page
+
+Jar Filers
+----------------
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Identifycourses</groupId>
+  <artifactId>Identifycourses</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+<build>
+	<pluginManagement>
+	<plugins>
+	<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<version>3.11.0</version>
+	</plugin>
+ 
+	<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+	<version>3.2.2</version>
+	<configuration>
+	<suiteXmlFiles>
+	<suiteXmlFile>master.xml</suiteXmlFile>
+	<!-- <suiteXmlFile>xyz.xml</suiteXmlFile>-->
+	</suiteXmlFiles>
+	</configuration>
+	</plugin>
+ 
+	</plugins>
+ 
+	</pluginManagement>
+</build>
+
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.17.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>5.2.4</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.2.4</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.9.0</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>3.0.0-alpha1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>3.0.0-alpha1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java  -->
+<dependency>
+<groupId>io.cucumber</groupId>
+<artifactId>cucumber-java</artifactId>
+<version>7.15.0</version>
+</dependency>
+ <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+<dependency>
+<groupId>io.cucumber</groupId>
+<artifactId>cucumber-testng</artifactId>
+<version>7.15.0</version>
+<scope>test</scope>
+</dependency>
+ 
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
+<dependency>
+<groupId>tech.grasshopper</groupId>
+<artifactId>extentreports-cucumber7-adapter</artifactId>
+<version>1.14.0</version>
+</dependency>
+
+</dependencies>
+
+</project>
+
+Output
+-----------------
+Scenario: Filter Web Development Courses by Level and Language # features/1_webcourses.feature:3
+  Given the user is on the homepage of the Coursera website    # StepDefenition.webdev.the_user_is_on_the_homepage_of_the_Coursera_website()
+
+    Embedding Filter Web Development Courses by Level and Language [image/png 929219 bytes]
+
+  When the user searches for web development courses           # StepDefenition.webdev.the_user_searches_for_web_development_courses()
+
+    Embedding Filter Web Development Courses by Level and Language [image/png 377919 bytes]
+
+courseName 1: Python for Data Science, AI & Development
+courseRating1: 4.6
+course duration: 25 hours (approximately)
+  And the user clicks the first webcourse and get the details  # StepDefenition.webdev.the_user_clicks_the_first_webcourse_and_get_the_details()
+
+    Embedding Filter Web Development Courses by Level and Language [image/png 511333 bytes]
+
+courseName 2: Meta Front-End Developer Professional Certificate
+courseRating2: 4.7
+course duration: 7 months at 6 hours a week
+courseRating2: 
+course duration: 
+  And the user clicks the second webcourse and get the details # StepDefenition.webdev.the_user_clicks_the_second_webcourse_and_get_the_details()
+
+    Embedding Filter Web Development Courses by Level and Language [image/png 511333 bytes]
+
+
+Scenario: Extract and display language and level information      # features/2_language_learning.feature:3
+  Given the user is on the homepage                               # StepDefenition.languagecourses.the_user_is_on_the_homepage()
+
+    Embedding Extract and display language and level information [image/png 745915 bytes]
+
+  When the user searches for language learning courses            # StepDefenition.languagecourses.the_user_searches_for_language_learning_courses()
+
+    Embedding Extract and display language and level information [image/png 297747 bytes]
+
+English (1,634)
+Spanish (1,098)
+Arabic (1,014)
+French (1,002)
+Portuguese (Brazil) (993)
+Chinese (China) (991)
+Japanese (988)
+Korean (983)
+German (980)
+Indonesian (980)
+Hindi (970)
+Italian (969)
+Swedish (968)
+Ukrainian (968)
+Dutch (967)
+Greek (967)
+Polish (967)
+Thai (967)
+Turkish (967)
+Russian (944)
+Kazakh (895)
+Hungarian (699)
+Chinese (Traditional) (5)
+Hebrew (2)
+total languages: 24
+  And they extract all available languages and their total counts # StepDefenition.languagecourses.they_extract_all_available_languages_and_their_total_counts()
+
+    Embedding Extract and display language and level information [image/png 310625 bytes]
+
+total count of levels:
+Beginner (882)
+Intermediate (754)
+Advanced (78)
+Mixed (151)
+total count of level: 4
+  And they extract all different levels and their total counts    # StepDefenition.languagecourses.they_extract_all_different_levels_and_their_total_counts()
+
+    Embedding Extract and display language and level information [image/png 297747 bytes]
+
+
+Scenario: Fill Form with invalid input and capture error message # features/3_enterprises.feature:3
+  Given the user nagivate to Coursera page                       # StepDefenition.enterprises.the_user_nagivate_to_Coursera_page()
+
+    Embedding Fill Form with invalid input and capture error message [image/png 929270 bytes]
+
+  When the user navigates to the Enterprise section              # StepDefenition.enterprises.the_user_navigates_to_the_Enterprise_section()
+
+    Embedding Fill Form with invalid input and capture error message [image/png 798264 bytes]
+
+  And the user fills the Form with invalid email                 # StepDefenition.enterprises.the_user_fills_the_Form_with_invalid_email()
+
+    Embedding Fill Form with invalid input and capture error message [image/png 151607 bytes]
+
+Error Message: Invalid Input
+  Then the user should capture and display the error message     # StepDefenition.enterprises.the_user_should_capture_and_display_the_error_message()
+
